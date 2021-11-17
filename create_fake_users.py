@@ -6,7 +6,7 @@ from bootstrap_table import db, User
 
 def create_fake_users(n):
     """Generate fake users."""
-    faker = Faker()
+    faker = Faker(['fi_FI'])
     for i in range(n):
         user = User(name=faker.name(),
                     age=random.randint(20, 80),
