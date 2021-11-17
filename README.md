@@ -1,6 +1,8 @@
 # flask-tables
 Beautiful interactive tables in your Flask templates
 
+Lokalisoitu suomeksi, sovellettu context_processor-menettelyä kielimäärityksen tuomiseksi kaikkiin template-sivuihin.
+
 ![Table Example](table.png)
 
 ## Resources
