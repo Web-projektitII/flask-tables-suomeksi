@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from config import LANGUAGE
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
@@ -17,6 +18,9 @@ class User(db.Model):
 
 db.create_all()
 
+@app.context_processor
+def kielivalinta():
+    return dict(kieli = LANGUAGE)
 
 @app.route('/')
 def index():

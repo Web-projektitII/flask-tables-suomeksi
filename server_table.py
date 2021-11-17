@@ -1,12 +1,16 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from config import LANGUAGE
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-
+@app.context_processor
+def kielivalinta():
+    return dict(kieli = LANGUAGE)
+    
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True)

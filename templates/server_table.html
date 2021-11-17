@@ -21,8 +21,8 @@
     $(document).ready(function () {
       $('#data').DataTable({
         language: {
-          "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Finnish.json"
-          },
+          "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/"+"{{ kieli }}"+".json"
+          },   
         ajax: '/api/data',
         serverSide: true,
         columns: [
