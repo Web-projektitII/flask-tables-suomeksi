@@ -31,8 +31,8 @@ class User(db.Model):
 db.create_all()
 
 
-@app.route('/')
-def index():
+@app.route('/server_table')
+def server_table():
     return render_template('server_table.html', title='Server-Driven Table')
 
 
