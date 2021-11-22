@@ -30,6 +30,9 @@ class User(db.Model):
 
 db.create_all()
 
+@app.route('/')
+def index():
+    return render_template('index.html', title='Hello')
 
 @app.route('/server_table')
 def server_table():
